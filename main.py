@@ -20,8 +20,11 @@ if __name__ == '__main__':
     b = Thingy()
     b.three = 3
     b.four = 4
+    b_lambda = types.MethodType( lambda self: f"b_lambda: {self}", b)
+    b.name = b_lambda
 
     print(f"a.one = {a.one}")
     print(f"b.four = {b.four}")
 
     print(f"a.name() = {a.name()}")
+    print(f"b.name() = {b.name()}")
